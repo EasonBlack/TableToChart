@@ -6,7 +6,6 @@ define(function(require){
     var main = new mainView();
     main.fetch()
         .then(_.bind(main.render,main))
-        //.then(_.bind(main.chartrender,main))
         .done(function(data){
             //alert(data);
         })

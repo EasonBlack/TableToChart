@@ -18,8 +18,19 @@ body, input {
 
   table {
     table-layout: fixed;
-    width: 100%;
+    width: 95%;
+    margin-right:8px;
+    margin-left:8px;
 
+    th {
+      background-color: steelblue;
+      color: white;
+      line-height:35px;
+    }
+
+    tr {
+      line-height:28px;
+    }
     td:not(:first-child) {
       text-align: center;
     }
@@ -47,18 +58,33 @@ body, input {
     transition: all 800ms;
   }
 
-  table {
-    th {
-      background-color: steelblue;
-      color: white;
-      line-height:35px;
-    }
 
-    tr {
-      line-height:28px;
-    }
+
+  .shadow {
+    position: relative;
+    font-size: 16px;
+
   }
-
+  .shadow:before {
+    box-shadow: -15px 0 15px -15px inset;
+    content: " ";
+    height: 100%;
+    top: 0;
+    left: -15px;
+    position: absolute;
+    width: 15px;
+    color:black;
+  }
+  .shadow:after {
+    box-shadow: 15px 0 15px -15px inset;
+    content: " ";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -15px;
+    width: 15px;
+    color:black;
+  }
 
 
   .button {

@@ -18,7 +18,17 @@ input {
 }
 .container table {
   table-layout: fixed;
-  width: 100%;
+  width: 95%;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+.container table th {
+  background-color: steelblue;
+  color: white;
+  line-height: 35px;
+}
+.container table tr {
+  line-height: 28px;
 }
 .container table td:not(:first-child) {
   text-align: center;
@@ -43,13 +53,29 @@ input {
   left: -600px;
   transition: all 800ms;
 }
-.container table th {
-  background-color: steelblue;
-  color: white;
-  line-height: 35px;
+.container .shadow {
+  position: relative;
+  font-size: 16px;
 }
-.container table tr {
-  line-height: 28px;
+.container .shadow:before {
+  box-shadow: -15px 0 15px -15px inset;
+  content: " ";
+  height: 100%;
+  top: 0;
+  left: -15px;
+  position: absolute;
+  width: 15px;
+  color: black;
+}
+.container .shadow:after {
+  box-shadow: 15px 0 15px -15px inset;
+  content: " ";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -15px;
+  width: 15px;
+  color: black;
 }
 .container .button {
   display: inline-block;

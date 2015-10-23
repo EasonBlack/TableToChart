@@ -9,6 +9,7 @@ define(function(require){
    var main = function(){
       this.table_data = {};
       this.el = $('.chart-container')[0];
+      $('#pie_chart')[0].disabled = true;
       this.init.apply(this, arguments);
    }
 
@@ -57,38 +58,18 @@ define(function(require){
            var options = {}
                , chart_data = []
                , self =this
+               , type = '', charttype=''
                ,obj = {};
 
-           obj = this.recode(this.table_data, function() {
-               var data = arguments[0]
-                   ,chart_data = [];
-               var _chart_headers = _.map(data, function (d) {
-                   return d.name;
-               });
-               var _chart_rows = _.map(data, function (d) {
-                   return d.data;
-               });
-               _.each( _chart_headers,function(v,i){
-                   var item = {};
-                   item.name= v;
-                   item.data = _.values(_chart_rows[i]);
-                   chart_data.push(item);
-               });
-               return {
-                   chart_headers :_chart_headers,
-                   chart_rows :_chart_rows,
-                   series : chart_data,
-                   categories : _.keys(_chart_rows[0])
-               }
-           });
-
+           type=$("input[type='radio']:checked").val();
+           charttype = $('th.shadow').length ?  $('th.shadow')[0].innerHTML: null;
+           obj = chartHelper[type](this.table_data, charttype);
 
            options.el = this.el;
-           options.type = $("input[type='radio']:checked").val();
+           options.type = type;
            options.categories = obj.categories;
            options.series = obj.series;
-           chartHelper().render(options);
-
+           chartHelper.render(options);
        },
 
        eventBind: function(){
@@ -101,6 +82,13 @@ define(function(require){
            $(document).on('click',function(e){
                $('.chart-container').css('left','-600px');
            });
+           $('table').on('click','th:not(:first)', function(e){
+               $('#pie_chart')[0].disabled = false;
+               $('.shadow').removeClass('shadow');
+               var index = $( "th" ).index( $(e.target));
+               $(e.target).addClass('shadow');
+               $('tr td:nth-child('+(index+1)+')').addClass('shadow');
+           })
        }
 
 
