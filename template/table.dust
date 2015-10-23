@@ -1,0 +1,16 @@
+<table cellspacing="0"  cellpadding="0">
+   <thead>
+      {#headers}
+      <th>{.}</th>
+      {/headers}
+   </thead>
+    <tbody>
+      {#rows values=rows}
+      <tr>
+         {#.}
+          <td>{.}</td>
+         {/.}
+      </tr>
+      {/rows}
+    </tbody>
+</table>

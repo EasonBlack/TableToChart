@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+        <link href="css/main.css"  rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class='container'>
+            <div class='table-container'></div>
+            <div class="condition-container">
+                <div class="row">
+                    <input type="radio" name="chart" value="line" id="line_chart" checked><label for="line_chart">Basic Line</label>
+                    <input type="radio" name="chart" value="bar" id="bar_chart"><label for="bar_chart">Basic Bar</label>
+                </div>
+                <div class="row">
+                    <a href="javascript:void(0)" class="button" id="btnChart">Chart</a>
+                </div>
+            </div>
+            <div class="chart-container">
+
+            </div>
+		</div>
+
+
+
+	</body>
+	<script src="vendor/require.js" data-main='js/config.js'></script>
+</html>

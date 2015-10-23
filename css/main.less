@@ -1,0 +1,78 @@
+body, input {
+  margin:0;
+  padding:0;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+}
+
+.container {
+  margin-top:50px;
+  margin-left:auto;
+  margin-right:auto;
+  width:600px;
+  min-height: 500px;
+  left: 0;
+  right: 0;
+  position:relative;
+  overflow:hidden;
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+
+    td:not(:first-child) {
+      text-align: center;
+    }
+  }
+
+  .condition-container {
+    margin-top:15px;
+    margin-bottom:15px;
+  }
+  .row {
+    margin:10px;
+    margin-left:0px;
+
+    label {
+      line-height: 13px;
+      vertical-align: top;
+      margin-left:5px;
+      margin-right:10px;
+    }
+  }
+  .chart-container {
+    position:absolute;
+    top:0;
+    left:-600px;
+    transition: all 800ms;
+  }
+
+  table {
+    th {
+      background-color: steelblue;
+      color: white;
+      line-height:35px;
+    }
+
+    tr {
+      line-height:28px;
+    }
+  }
+
+
+
+  .button {
+    display: inline-block;
+    background-color: steelblue;
+    border: 1px solid dimgrey;
+    border-radius: 5px;
+    width:130px;
+    height:20px;
+    line-height: 20px;
+    margin: auto;
+    text-align: center;
+    color: white;
+    text-transform:none;text-decoration:none;
+
+  }
+}
